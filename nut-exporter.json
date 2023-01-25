@@ -25,6 +25,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
+  "id": 42,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -56,7 +57,10 @@
       "type": "row"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "description": " * OL - On line (mains is present)\n * OB - On battery (mains is not present)\n * LB - Low battery\n * HB - High battery\n * RB - The battery needs to be replaced\n * CHRG - The battery is charging\n * DISCHRG - The battery is discharging (inverter is providing load power)\n * BYPASS - UPS bypass circuit is active -- no battery protection is available\n * CAL - UPS is currently performing runtime calibration (on battery)\n * OFF - UPS is offline and is not supplying power to the load\n * OVER - UPS is overloaded\n * TRIM - UPS is trimming incoming voltage (called \"buck\" in some hardware)\n * BOOST - UPS is boosting incoming voltage\n * FSD and SD - Forced Shutdown",
       "fieldConfig": {
         "defaults": {
@@ -106,13 +110,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_ups_status == 1",
           "interval": "",
           "legendFormat": "{{flag}}",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -121,7 +123,10 @@
       "type": "stat"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -171,13 +176,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_device_info{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "{{mfr}}",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -186,7 +189,10 @@
       "type": "stat"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -236,13 +242,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_device_info{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "{{model}}",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -251,7 +255,10 @@
       "type": "stat"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -309,9 +316,8 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_battery_charge{ups=\"$ups\"}",
           "instant": false,
           "interval": "",
@@ -328,7 +334,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "description": "",
       "fieldConfig": {
         "defaults": {},
@@ -387,13 +396,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_battery_runtime{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -456,7 +463,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "fill": 1,
       "fillGradient": 5,
       "gridPos": {
@@ -495,13 +505,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_ups_load{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -544,7 +552,7 @@
     {
       "datasource": {
         "type": "prometheus",
-        "uid": "${DS_PROMETHEUS}"
+        "uid": "P4169E866C3094E38"
       },
       "fieldConfig": {
         "defaults": {
@@ -592,7 +600,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
           "expr": "network_ups_tools_battery_runtime{ups=\"$ups\"}",
           "interval": "",
@@ -605,7 +613,10 @@
       "type": "stat"
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -660,13 +671,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_input_voltage{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -679,7 +688,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "fill": 1,
       "fillGradient": 5,
       "gridPos": {
@@ -720,13 +732,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_input_voltage{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -766,7 +776,10 @@
       }
     },
     {
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "fieldConfig": {
         "defaults": {
           "mappings": [
@@ -828,13 +841,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_battery_voltage{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -847,7 +858,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": {},
+      "datasource": {
+        "type": "prometheus",
+        "uid": "P4169E866C3094E38"
+      },
       "fill": 1,
       "fillGradient": 5,
       "gridPos": {
@@ -888,13 +902,11 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "${DS_PROMETHEUS}"
+            "uid": "P4169E866C3094E38"
           },
-          "editorMode": "code",
           "expr": "network_ups_tools_battery_voltage{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
-          "range": true,
           "refId": "A"
         }
       ],
@@ -938,10 +950,42 @@
   "style": "dark",
   "tags": [],
   "templating": {
-    "list": []
+    "list": [
+      {
+        "current": {
+          "isNone": true,
+          "selected": false,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": {
+          "type": "prometheus",
+          "uid": "P4169E866C3094E38"
+        },
+        "definition": "label_values(network_ups_tools_device_info, ups)",
+        "hide": 0,
+        "includeAll": false,
+        "label": "UPS",
+        "multi": false,
+        "name": "ups",
+        "options": [],
+        "query": {
+          "query": "label_values(network_ups_tools_device_info, ups)",
+          "refId": "Prometheus-ups-Variable-Query"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -960,7 +1004,7 @@
   },
   "timezone": "",
   "title": "UPS statistics",
-  "uid": "j4a-DMWRk",
-  "version": 1,
+  "uid": "j4a-DMWRkaaa",
+  "version": 2,
   "weekStart": ""
 }
