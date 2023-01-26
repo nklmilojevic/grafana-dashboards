@@ -66,7 +66,7 @@
       "collapsed": false,
       "datasource": {
         "type": "prometheus",
-        "uid": "PBFA97CFB590B2093"
+        "uid": ""
       },
       "gridPos": {
         "h": 1,
@@ -81,7 +81,7 @@
         {
           "datasource": {
             "type": "prometheus",
-            "uid": "PBFA97CFB590B2093"
+            "uid": ""
           },
           "refId": "A"
         }
@@ -90,7 +90,7 @@
       "type": "row"
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "description": " * OL - On line (mains is present)\n * OB - On battery (mains is not present)\n * LB - Low battery\n * HB - High battery\n * RB - The battery needs to be replaced\n * CHRG - The battery is charging\n * DISCHRG - The battery is discharging (inverter is providing load power)\n * BYPASS - UPS bypass circuit is active -- no battery protection is available\n * CAL - UPS is currently performing runtime calibration (on battery)\n * OFF - UPS is offline and is not supplying power to the load\n * OVER - UPS is overloaded\n * TRIM - UPS is trimming incoming voltage (called \"buck\" in some hardware)\n * BOOST - UPS is boosting incoming voltage\n * FSD and SD - Forced Shutdown",
       "fieldConfig": {
         "defaults": {
@@ -138,7 +138,7 @@
       "pluginVersion": "9.3.1",
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_ups_status == 1",
           "interval": "",
           "legendFormat": "{{flag}}",
@@ -150,7 +150,7 @@
       "type": "stat"
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -198,7 +198,7 @@
       "pluginVersion": "9.3.1",
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_device_info{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "{{mfr}}",
@@ -210,7 +210,7 @@
       "type": "stat"
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -258,7 +258,7 @@
       "pluginVersion": "9.3.1",
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_device_info{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "{{model}}",
@@ -270,7 +270,7 @@
       "type": "stat"
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -326,7 +326,7 @@
       "pluginVersion": "9.3.1",
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_battery_charge{ups=\"$ups\"}",
           "instant": false,
           "interval": "",
@@ -343,7 +343,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "description": "",
       "fieldConfig": {
         "defaults": {},
@@ -400,7 +400,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_battery_runtime{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
@@ -466,7 +466,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "fill": 1,
       "fillGradient": 5,
       "gridPos": {
@@ -503,7 +503,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_ups_load{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
@@ -547,7 +547,7 @@
       }
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -592,7 +592,7 @@
       "pluginVersion": "9.3.1",
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_battery_runtime{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
@@ -604,7 +604,7 @@
       "type": "stat"
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "fieldConfig": {
         "defaults": {
           "mappings": [],
@@ -657,7 +657,7 @@
       "pluginVersion": "9.3.1",
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_input_voltage{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
@@ -673,7 +673,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "fill": 1,
       "fillGradient": 5,
       "gridPos": {
@@ -712,7 +712,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_input_voltage{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
@@ -755,7 +755,7 @@
       }
     },
     {
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "fieldConfig": {
         "defaults": {
           "mappings": [
@@ -815,7 +815,7 @@
       "pluginVersion": "9.3.1",
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_battery_voltage{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
@@ -831,7 +831,7 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "${DS_PROMETHEUS}",
+      "datasource": "VictoriaMetrics",
       "fill": 1,
       "fillGradient": 5,
       "gridPos": {
@@ -870,7 +870,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "datasource": "${DS_PROMETHEUS}",
+          "datasource": "VictoriaMetrics",
           "expr": "network_ups_tools_battery_voltage{ups=\"$ups\"}",
           "interval": "",
           "legendFormat": "",
@@ -920,7 +920,7 @@
     "list": [
       {
         "current": {},
-        "datasource": "${DS_PROMETHEUS}",
+        "datasource": "VictoriaMetrics",
         "definition": "label_values(network_ups_tools_device_info, ups)",
         "hide": 0,
         "includeAll": false,
